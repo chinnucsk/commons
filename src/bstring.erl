@@ -9,15 +9,11 @@
 
 -spec to_upper(binary()) -> binary().
 to_upper(Binary) when is_binary(Binary) ->
-  list_to_binary(string:to_upper(binary_to_list(Binary)));
-to_upper(_) ->
-  {error, not_a_binary}.
+  list_to_binary(string:to_upper(binary_to_list(Binary)))
 
 -spec to_lower(binary()) -> binary().
 to_lower(Binary) when is_binary(Binary) ->
-  list_to_binary(string:to_lower(binary_to_list(Binary)));
-to_lower(_) ->
-  {error, not_a_binary}.
+  list_to_binary(string:to_lower(binary_to_list(Binary)))
 
 -spec to_integer(binary()) -> {ok, integer()} | {error, no_integer}.
 to_integer(Binary) when is_binary(Binary) ->
