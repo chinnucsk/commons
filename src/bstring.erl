@@ -2,10 +2,16 @@
 
 -author('@voluntas').
 
+-export([reverse/1]).
+
 -export([to_upper/1,
          to_lower/1,
          to_integer/1,
          to_float/1]).
+
+-spec reverse(binary()) -> binary().
+reverse(Binary) when is_binary(Binary) ->
+  list_to_binary(lists:reverse(binary_to_list(Binary))).
 
 -spec to_upper(binary()) -> binary().
 to_upper(Binary) when is_binary(Binary) ->
